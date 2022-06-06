@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio Bootcamp JAMStack Alura
 
-## Available Scripts
+Esse desafio consiste em migrar um app criado em "create react-app" para NextJS.
 
-In the project directory, you can run:
+Inicialmente foi necessário atualizar algumas bibliotecas, pois esse código é um fork de uma aplicação criada há mais de um ano.
 
-### `npm start`
+Inicialmente o package estava assim:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```json
+dependencies": {
+    "axios": "^0.18.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.0"
+  },
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Ao rodar `npm install`, o CLI acusou um erro ao tentar instalar o node-sass, e vi que essa lib não está sendo mais sustentada. Então rodei `npm uninstall node-sass` e o node instalou o node_modules.
 
-### `npm test`
+- instalei o sass: `npm install sass`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- atualizei os pacotes: `npm install react@latest react-dom@latest`
 
-### `npm run build`
+- Atualizei o react-scripts: `npm install react-scripts@latest`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Atualizei o axios: `npm install axios@latest`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Depois disso, o `npm audit` ainda acusa 6 vulnerabilidades severas, mas acredito que isso vai melhorar ao fim do projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Agora o package está assim:
 
-### `npm run eject`
+```json
+"dependencies": {
+    "axios": "^0.27.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.52.2"
+  },
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Havia um "/" a mais na parte de API que foi removida para que as requisições passassem a funcionar.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Pronto! O app voltou a rodar! \o/
