@@ -1,11 +1,10 @@
 import React from 'react'
-import './styles/index.scss'
 
-import Raca from './components/Raca'
-import ListaRacas from './components/ListaRacas'
-import Cabecalho from './components/Cabecalho'
+import Raca from '../src/components/Raca'
+import ListaRacas from '../src/components/ListaRacas'
+import Cabecalho from '../src/components/Cabecalho'
 
-import { buscaSobreRacas, buscaImagemPorRaca, buscaTodasRacas } from './api'
+import { buscaSobreRacas, buscaImagemPorRaca, buscaTodasRacas } from '../src/api'
 
 class App extends React.Component {
   constructor(props) {

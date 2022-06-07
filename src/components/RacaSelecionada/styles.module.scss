@@ -1,6 +1,6 @@
-@import "../../styles/variaveis";
+@import "../../styles/variaveis.module";
 
-.raca-selecionada {
+.racaSelecionada {
   width: 300px;
   margin: 0 auto;
   border: 4px solid $rosa;
