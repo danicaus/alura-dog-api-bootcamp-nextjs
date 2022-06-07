@@ -1,11 +1,11 @@
 import React from 'react'
-import './styles.scss'
+import styles from './styles.module.scss'
 
 const RacaNaoSelecionada = () => (
   <div>
     <img
       alt="Pug triste"
-      className="raca-nao-selecionada"
+      className={styles.racaNaoSelecionada}
       src="https://www.oversodoinverso.com.br/wp-content/uploads/2015/05/pugs-tristes-2.jpg"
     />
   </div>

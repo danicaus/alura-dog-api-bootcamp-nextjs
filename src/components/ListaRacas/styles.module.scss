@@ -1,6 +1,6 @@
-@import "../../styles/variaveis";
+@import "../../styles/variaveis.module";
 
-.lista-racas {
+.listaRacas {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
