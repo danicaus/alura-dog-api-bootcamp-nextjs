@@ -43,3 +43,11 @@ Agora o package está assim:
 Havia um "/" a mais na parte de API que foi removida para que as requisições passassem a funcionar.
 
 Pronto! O app voltou a rodar! \o/
+
+## Exercício
+
+Passei a página única para uma versão funcional do React, tirando da versão antiga. Passei a usar os hooks `useState` e `useEffect` em vez de suas versões antigas.
+
+Criei um `ApiProvider` para comunicação com as APIs. Ele fornece a lista de raças, a raça selecionada, o estado da seleção e a função para seleção de uma nova raça.
+
+Criei um hook para puxar esses valores fornecidos pelo contexto. Assim não é necessário passar props entre os componentes abaixo dele.
