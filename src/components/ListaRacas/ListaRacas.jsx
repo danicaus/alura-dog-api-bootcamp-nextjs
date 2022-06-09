@@ -1,15 +1,18 @@
 import React from 'react'
+import useApi from '../../hooks/useApi'
 import styles from './styles.module.scss'
 
-const ListaRacas = props => {
+function ListaRacas() {
+  const { listaRacas, selecionaRaca } = useApi();
+
   return (
     <ul className={styles.listaRacas}>
       {
-        props.racas.map(raca => (
+        listaRacas.map(raca => (
           <li
             className={styles.listaRacas__item}
             key={raca.id}
-            onClick={() => props.selecionaRaca(raca.name)}
+            onClick={() => selecionaRaca(raca.name)}
           >
             {raca.name}
           </li>

@@ -2,14 +2,16 @@ import React from 'react'
 
 import RacaSelecionada from '../RacaSelecionada'
 import RacaNaoSelecionada from '../RacaNaoSelecionada'
+import useApi from '../../hooks/useApi'
 
-const Raca = props => {
-  const racaFoiSelecionada = Boolean(props.raca.name)
+function Raca () {
+  const { infoRaca } = useApi();
+  const racaFoiSelecionada = Boolean(infoRaca.name)
 
   return (
     racaFoiSelecionada
     ?
-    <RacaSelecionada {...props} />
+    <RacaSelecionada raca={infoRaca} />
     :
     <RacaNaoSelecionada />
   )
